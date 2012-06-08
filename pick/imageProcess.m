@@ -2,12 +2,9 @@
 //  imageProcess.m
 //  pick
 //
-//  Created by Fan Yu on 12-04-17.
+//  Created by Echo Yu on 12-04-17.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //   
-//  Note: listed methods cited from online source tutorial
-//  CreateRGBABitmapContext&
-//  RequestImagePixelData(UIImage *inImage)
 
 #import "imageProcess.h"
 

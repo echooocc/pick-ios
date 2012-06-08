@@ -2,7 +2,7 @@
 //  AppDelegate.h
 //  pick
 //
-//  Created by Fan Yu on 12-04-19.
+//  Created by Echo Yu on 12-04-19.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 

@@ -2,7 +2,7 @@
 //  imageProcess.h
 //  pick
 //
-//  Created by Fan Yu on 12-04-17.
+//  Created by Echo Yu on 12-04-17.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
@@ -13,10 +13,6 @@
 
 @interface imageProcess : NSObject 
 
-//cumstom rgb caculate 
-+ (UIImage*)blackWhite:(UIImage*)inImage;
-+ (UIImage*)cartoon:(UIImage*)inImage;
-+ (UIImage*)pop:(UIImage*)inImage;
 
 
 #pragma mark -
