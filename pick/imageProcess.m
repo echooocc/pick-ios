@@ -31,7 +31,7 @@
     CIFilter *filter = [CIFilter filterWithName:@"CIToneCurve" 
                                   keysAndValues: kCIInputImageKey, start, 
                         @"inputPoint0", [CIVector vectorWithX:0.7 Y:0.7],
-                        @"inputPoint1", [CIVector vectorWithX:0.3 Y:0.3],
+                        @"inputPoint1", [CIVector vectorWithX:0.7 Y:0.3],
                         @"inputPoint2", [CIVector vectorWithX:0.7 Y:0.3],
                         @"inputPoint3", [CIVector vectorWithX:0.75 Y:0.75],
                         @"inputPoint4", [CIVector vectorWithX:0.5 Y:0.5],

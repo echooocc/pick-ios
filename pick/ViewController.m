@@ -14,7 +14,7 @@
 @end
 
 @implementation ViewController
-@synthesize imgV,subView;
+@synthesize imgV,scrollView;
 
 
 #pragma mark-
@@ -22,6 +22,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    scrollView.contentSize = _scrollableView.frame.size;
+        
+    
+
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -57,6 +61,31 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
         currentImg = image;
         self.imgV.image = image;
         
+        
+        //set all preveiw image as background image on buttons
+       
+        preImg1 = currentImg;
+        [_preButton1 setImage:preImg1 forState:UIControlStateNormal];
+        NSLog(@"original image load");
+        
+        
+        preImg2 = [imageProcess sepia:currentImg];
+        [_preButton2 setImage:preImg2 forState:UIControlStateNormal];
+        NSLog(@"sepia effect load");
+        
+       
+        preImg3 = [imageProcess monochrome:currentImg];
+        [_preButton3 setImage:preImg3 forState:UIControlStateNormal];
+        NSLog(@"monochrome effect load");
+        
+      
+        preImg4 = [imageProcess highlights:currentImg];
+        [_preButton4 setImage:preImg4 forState:UIControlStateNormal];
+        NSLog(@"highlights effect load");
+        
+        preImg5 = [imageProcess comic:currentImg];
+        [_preButton5 setImage:preImg5 forState:UIControlStateNormal];
+        NSLog(@"comic effect load");
     }
     
 }
@@ -135,10 +164,55 @@ finishedSavingWithError:(NSError *)error
                                        self,
                                        @selector(image:finishedSavingWithError:contextInfo:),
                                        nil);
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"SAVE" message:@"Image has been successfully saved" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    [alert show];
+    NSLog(@"save successfully");
 }
 
+-(IBAction)preview1:(id)sender
+{
+ 
+    if (currentImg) {
+        self.imgV.image = preImg1;
+        NSLog(@"original image");
+    }
+    
+}
 
+-(IBAction)preview2:(id)sender
+{
+    if (currentImg) {
+        self.imgV.image = preImg2;
+        NSLog(@"sepia image");
+    }
+}
 
+-(IBAction)preview3:(id)sender
+{
+    if (currentImg) {
+        self.imgV.image = preImg3;
+        NSLog(@"mono image");
+    }
+}
+
+-(IBAction)preview4:(id)sender
+{
+    if (currentImg) {
+        self.imgV.image = preImg4;
+        NSLog(@"higlights image");
+    }
+}
+
+-(IBAction)preview5:(id)sender
+{
+    if (currentImg) {
+        self.imgV.image = preImg5;
+        NSLog(@"comic image");
+    }
+}
+
+#pragma mark-
+//segament bar for old version
 -(IBAction)effects:(id)sender {
     
     UISegmentedControl *sg = (UISegmentedControl*)sender;
